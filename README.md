@@ -1,5 +1,7 @@
 # React Data Fetching Architecture Example
 
+👻 Live Demo：[點我看 demo](https://react-data-fetching-architecture-ex.vercel.app/)
+
 > 本專案是文章 [**大型 React 專案中 API 層的演進與分層設計**](https://doreentseng.github.io/posts/2026-03-18-react-data-fetching-architecture/) 的配套範例程式碼。
 
 
