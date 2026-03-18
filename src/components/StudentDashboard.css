@@ -101,3 +101,94 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
   grid-column: 1 / -1;
 }
+
+/* Loading 樣式 */
+.loading {
+  text-align: center;
+  padding: 48px 16px;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* 錯誤容器 */
+.error-container {
+  text-align: center;
+  padding: 48px 24px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.error-container h3 {
+  color: #ef4444;
+  margin: 0 0 12px 0;
+  font-size: 18px;
+}
+
+.error-message {
+  color: #6b7280;
+  margin: 0 0 24px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.retry-btn {
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.retry-btn:hover {
+  background: #2563eb;
+}
+
+/* 成功橫幅 */
+.success-banner {
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  color: #16a34a;
+  font-size: 14px;
+  line-height: 1.5;
+  animation: slideDown 0.3s ease-out;
+}
+
+/* 錯誤橫幅 */
+.error-banner {
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  color: #dc2626;
+  font-size: 14px;
+  line-height: 1.5;
+  animation: slideDown 0.3s ease-out;
+}
+
+/* 橫幅動畫 */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 按鈕禁用狀態 */
+.delete-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
