@@ -16,9 +16,9 @@
 - **Mock Service Worker**：使用 MSW 模擬 API，無需後端即可開發和測試
 - **React Query 整合**：充分利用快取、背景更新和樂觀更新等功能
 
-## 技術棧
+## Technical Stack
 
-- **React 19** - UI 框架
+- **React 19** - JavaScript Library
 - **TanStack Query (React Query) v5** - 資料獲取和狀態管理
 - **Axios** - HTTP 客戶端
 - **MSW (Mock Service Worker) v2** - API 模擬
@@ -40,7 +40,7 @@
 └─────────────────┬───────────────────────┘  - 設定重試策略
                   │                          - 管理快取邏輯
 ┌─────────────────▼───────────────────────┐
-│          Service Layer                  │  業務邏輯層：處理業務邏輯
+│          Service Layer                  │  Service 層：處理業務邏輯
 │         (studentService)                │  - 組合多個 API 呼叫
 └─────────────────┬───────────────────────┘  - 資料轉換和整合
                   │                          - 降級處理
