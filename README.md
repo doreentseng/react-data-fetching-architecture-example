@@ -9,12 +9,12 @@
 
 ## 專案特色
 
-- **分層架構設計**：清晰的 API → Service → Hook → Component 四層架構
+- **分層架構設計**：API → Service → Hook → Component 四層架構
 - **完整錯誤處理**：統一的錯誤類別系統與使用者友善的錯誤訊息
-- **智能重試策略**：自動識別可重試錯誤，採用指數退避演算法
+- **智能重試策略**：自動識別可重試錯誤，採用指數退避 (Exponential Backoff) 演算法 
 - **降級處理機制**：當部分 API 失敗時提供降級方案，確保核心功能可用
 - **Mock Service Worker**：使用 MSW 模擬 API，無需後端即可開發和測試
-- **React Query 整合**：充分利用快取、背景更新和樂觀更新等功能
+- **React Query 整合**：充分利用 cache、背景更新和樂觀更新 (Optimistic Updates) 等功能
 
 ## Technical Stack
 
@@ -38,7 +38,7 @@
 │            Hook Layer                   │  Hook 層：封裝 React Query 邏輯
 │  (useStudents, useDeleteStudent)        │  - 定義查詢/變更配置
 └─────────────────┬───────────────────────┘  - 設定重試策略
-                  │                          - 管理快取邏輯
+                  │                          - 管理 cache 邏輯
 ┌─────────────────▼───────────────────────┐
 │          Service Layer                  │  Service 層：處理業務邏輯
 │         (studentService)                │  - 組合多個 API 呼叫
@@ -66,7 +66,7 @@ Component → Hook → Service → API → 後端
                      ↓
               onSuccess/onError
                      ↓
-            invalidateQueries (更新快取)
+            invalidateQueries (更新 cache)
 ```
 
 ## 目錄結構
@@ -146,11 +146,11 @@ try {
 }
 ```
 
-### 4. React Query 快取管理
+### 4. React Query 的 cache 管理
 
 ```javascript
 // 查詢配置
-queryKey: ['students']       // 快取鍵值
+queryKey: ['students']       // cache 鍵值
 staleTime: 1000 * 60        // 資料保鮮 1 分鐘
 
 // 變更後自動更新
